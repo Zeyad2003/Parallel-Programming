@@ -13,12 +13,12 @@ void registration() {
     FILE *reg;
 
     reg = fopen("reg.txt", "w");
-    if (reg == nullptr) {
+    if (reg == NULL) {
         fputs("Error at opening File!", stderr);
         return;
     }
 
-    struct User u{};
+    struct User u;
 
     printf("\nEnter First Name: ");
     fgets(u.firstName, 30, stdin);
@@ -45,12 +45,12 @@ void registration() {
 }
 
 void login() {
-    struct User u{};
+    struct User u;
     char username[30], password[20];
     FILE *reg;
 
     reg = fopen("reg.txt", "r");
-    if (reg == nullptr) {
+    if (reg == NULL) {
         fputs("Error at opening File!!", stderr);
         return;
     }
@@ -80,14 +80,14 @@ int main() {
     char input[10];
     int num;
 
-    while (true) {
+    while (1) {
         printf("Press '1' to Register");
         printf("\nPress '2' to Login");
         printf("\nPress '3' to close the application\n");
 
         fgets(input, 10, stdin);
 
-        num = strtol(input, nullptr, 10);
+        num = strtol(input, NULL, 10);
 
         if (num == 1) {
             registration();
